@@ -12,24 +12,15 @@
 </head>
 <body>
 
-    <!-- Kamera -->
-    <main id="camera">
+<form id="form1" runat="server">
+    <input type="file" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Your label here.">
+    <img id="blah" src="#" alt="your image" />
+</form>
 
-        <input type="file" accept="image/*" capture="camera">
-        <!-- Kamera View -->
-        <video id="camera--view" autoplay playsinline></video>
-
-        <!-- Kamera Sensor - Wird angesprochen um den Kamerastream zu starten-->
-        <canvas id="camera--sensor"></canvas>
-
-        <!-- Kamera output -->
-        <img src="//:0" alt="" id="camera--output">
-
-        <!-- Kamera Trigger -->
-        <button id="camera--trigger">Bild aufnehmen</button>
 
         <!-- Referenz zum JavaScript file -->
-        <script src="js/app.js"></script>
-    </main>
+    <script src="js/app.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-filestyle.min.js"> </script>
 </body>
 </html>

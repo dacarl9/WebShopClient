@@ -1,36 +1,18 @@
 window.onload = function(){
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
 
-    // Berechtigungen
-    let constraints = { video: { facingMode: "user" }, audio: false };
+            reader.onload = function (e) {
+                $('#blah').attr('src', e.target.result);
+            }
 
-    // laden der Elemente
-    const cameraView = document.querySelector("#camera--view"),
-        cameraOutput = document.querySelector("#camera--output"),
-        cameraSensor = document.querySelector("#camera--sensor"),
-        cameraTrigger = document.querySelector("#camera--trigger");
-
-    // Kamera Starten
-    function cameraStart() {
-        navigator.mediaDevices
-            .getUserMedia(constraints)
-            .then(function(stream) {
-                track = stream.getTracks()[0];
-                cameraView.srcObject = stream;
-            })
-            .catch(function(error) {
-                console.error("Oops. Something is broken.", error);
-            });
+            reader.readAsDataURL(input.files[0]);
+        }
     }
 
-    // Foto aufnehmen
-    cameraTrigger.onclick = function() {
-        cameraSensor.width = cameraView.videoWidth;
-        cameraSensor.height = cameraView.videoHeight;
-        cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
-        cameraOutput.src = cameraSensor.toDataURL("image/webp");
-        cameraOutput.classList.add("taken");
-    };
-
-    // startet den Stream  beim Start
-    window.addEventListener("load", cameraStart, false);
+    $("#imgInp").change(function(){
+        readURL(this);
+    });
 };
+
