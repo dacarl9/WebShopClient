@@ -1,13 +1,13 @@
 window.onload = function(){
 
     // Berechtigungen
-    var constraints = { video: { facingMode: "user" }, audio: false };
+    let constraints = { video: { facingMode: "user" }, audio: false };
 
     // laden der Elemente
     const cameraView = document.querySelector("#camera--view"),
         cameraOutput = document.querySelector("#camera--output"),
         cameraSensor = document.querySelector("#camera--sensor"),
-        cameraTrigger = document.querySelector("#camera--trigger")
+        cameraTrigger = document.querySelector("#camera--trigger");
 
     // Kamera Starten
     function cameraStart() {
