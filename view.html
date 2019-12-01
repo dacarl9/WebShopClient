@@ -21,13 +21,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="index.html">Artikel hinzufügen <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="delete.html">Artikel löschen</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="view.html">Artikel holen</a>
             </li>
         </ul>
@@ -38,31 +38,25 @@
 <div id="successMessage" class="alert alert-success" role="alert">
     Item Erfolgreich erstellt.
 </div>
-<div id="imagePreview">
-    <img id="image" src="media/take.png" alt="your image"/>
-</div>
+
 <div id="center">
     <div>
-        <input type="button" id="loadCam" value="Bild aufnehmen" onclick="document.getElementById('imgInp').click();"/>
-        <input type="file" style="display:none;" id="imgInp" name="file"/>
+        <button type="button"  id="viewAll" class="btn btn-primary btn-lg">Alle Artikel holen</button>
     </div>
+</div><br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Titel</th>
+            <th scope="col">Beschreibung</th>
+            <th scope="col">Preis</th>
+        </tr>
+        </thead>
+        <tbody id="artikelEntries">
+        </tbody>
+    </table>
 </div>
-<p id="demo" style="color: red"></p>
-<form id="formUploadItem" runat="server">
-    <div class="form-group">
-        <label for="articleTitle">Artikel Titel</label>
-        <input type="text" class="form-control" id="articleTitle" placeholder="Artikel Titel">
-    </div>
-    <div class="form-group">
-        <label for="articleDescription">Artikel Beschreibung</label>
-        <input type="text" class="form-control" id="articleDescription" placeholder="Artikel Beschreibung">
-    </div>
-    <div class="form-group">
-        <label for="articlePrice">Artikel Preis</label>
-        <input type="number" step=".01" class="form-control" id="articlePrice" placeholder="Artikel Preis">
-    </div>
-    <button type="submit" class="btn btn-primary">Artikel hinzufügen</button>
-</form>
 
 
 
